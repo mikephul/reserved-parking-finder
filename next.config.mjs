@@ -1,4 +1,10 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  reactStrictMode: true,
+  images: {
+    domains: ["placehold.co"],
+    dangerouslyAllowSVG: true,
+  },
+}
 
-export default nextConfig;
+export default nextConfig
