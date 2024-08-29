@@ -7,6 +7,7 @@ export type Mall = {
 export const malls: Mall[] = [
   { id: "central-world", name: "Central World" },
   { id: "siam-paragon", name: "Siam Paragon" },
+  { id: "icon-siam", name: "Icon Siam" },
   { id: "emquartier", name: "EmQuartier" },
   { id: "central-plaza-grand-rama-9", name: "Central Plaza Grand Rama 9" },
   { id: "central-plaza-ladprao", name: "Central Plaza Ladprao" },
@@ -21,7 +22,6 @@ export const malls: Mall[] = [
   { id: "esplanade-cineplex-ratchada", name: "Esplanade Cineplex Ratchada" },
   { id: "major-cineplex-sukhumvit", name: "Major Cineplex Sukhumvit" },
   { id: "major-cineplex-pinklao", name: "Major Cineplex Pinklao" },
-  { id: "icon-siam", name: "Icon Siam" },
   { id: "siam-center", name: "Siam Center" },
   { id: "central-rama-2", name: "Central Rama 2" },
   { id: "central-ramintra", name: "Central Ramintra" },
@@ -31,7 +31,7 @@ export const malls: Mall[] = [
   { id: "central-plaza-rama-3", name: "Central Plaza Rama 3" },
   { id: "central-chitlom", name: "Central Chitlom" },
   { id: "central-embassy", name: "Central Embassy" },
-  { id: "the-mall-ngamwong", name: "The Mall Ngamwong" },
+  { id: "the-mall-ngamwongwan", name: "The Mall Ngamwongwan" },
   { id: "the-mall-bangkae", name: "The Mall Bangkae" },
 ]
 
@@ -61,6 +61,12 @@ export const creditCards: CreditCard[] = [
     entity: "ktb",
     name: "KTB Precious Plus",
     color: "#353236",
+  },
+  {
+    id: "ktb-iconic",
+    entity: "ktb",
+    name: "KTB Iconic",
+    color: "#C09158",
   },
   {
     id: "kbank-the-wisdom",
@@ -93,6 +99,24 @@ export const creditCards: CreditCard[] = [
     color: "#211F20",
   },
   {
+    id: "bay-central-the1-the-black",
+    entity: "bay",
+    name: "Central The1 The Black",
+    color: "#000000",
+  },
+  {
+    id: "bay-siam-takashiyama-finest",
+    entity: "bay",
+    name: "Siam Takashiyama Finest",
+    color: "#C5C6C9",
+  },
+  {
+    id: "bay-siam-takashiyama-finest-invitation",
+    entity: "bay",
+    name: "Siam Takashiyama Finest - Invitation",
+    color: "#2D292A",
+  },
+  {
     id: "uob-infinite",
     entity: "uob",
     name: "UOB Infinite",
@@ -115,6 +139,24 @@ export const creditCards: CreditCard[] = [
     entity: "uob",
     name: "UOB Zenith",
     color: "#243845",
+  },
+  {
+    id: "uob-mercedes",
+    entity: "uob",
+    name: "UOB Mercedes",
+    color: "#000000",
+  },
+  {
+    id: "bbl-m-luxe",
+    entity: "bbl",
+    name: "BBL M Luxe",
+    color: "#ED1B24",
+  },
+  {
+    id: "bbl-m-legend",
+    entity: "bbl",
+    name: "BBL M Legend",
+    color: "#002C5D",
   },
 ]
 
@@ -144,13 +186,23 @@ export const mallToParkingEntities: Record<string, Parking[]> = {
       entity: "bay",
       location: "Floor B1, B2",
       spotsAvailable: 1,
-      cards: ["bay-central-the1-luxe", "bay-central-the1-black"],
+      cards: [
+        "bay-central-the1-luxe",
+        "bay-central-the1-black",
+        "bay-central-the1-the-black",
+      ],
     },
     {
       entity: "uob",
       location: "Floor B1",
       spotsAvailable: 1,
-      cards: ["uob-infinite", "uob-privimiles", "uob-premier", "uob-zenith"],
+      cards: [
+        "uob-infinite",
+        "uob-privimiles",
+        "uob-premier",
+        "uob-zenith",
+        "uob-mercedes",
+      ],
     },
   ],
   "siam-paragon": [
@@ -158,7 +210,7 @@ export const mallToParkingEntities: Record<string, Parking[]> = {
       entity: "scb",
       location: "Floor B1 (Zone South)",
       spotsAvailable: 1,
-      cards: ["scb-first", "scb-private-banking"],
+      cards: ["scb-private-banking"],
     },
     {
       entity: "ktb",
@@ -176,7 +228,13 @@ export const mallToParkingEntities: Record<string, Parking[]> = {
       entity: "uob",
       location: "Floor B1 (Zone North)",
       spotsAvailable: 1,
-      cards: ["uob-infinite", "uob-privimiles", "uob-zenith"],
+      cards: ["uob-infinite", "uob-privimiles", "uob-zenith", "uob-mercedes"],
+    },
+    {
+      entity: "bbl",
+      location: "Floor B1",
+      spotsAvailable: 1,
+      cards: ["bbl-m-luxe", "bbl-m-legend"],
     },
   ],
   emquartier: [
@@ -230,7 +288,11 @@ export const mallToParkingEntities: Record<string, Parking[]> = {
       entity: "bay",
       location: "Floor 3",
       spotsAvailable: 1,
-      cards: ["bay-central-the1-luxe", "bay-central-the1-black"],
+      cards: [
+        "bay-central-the1-luxe",
+        "bay-central-the1-black",
+        "bay-central-the1-the-black",
+      ],
     },
   ],
   "central-plaza-westgate": [
@@ -244,7 +306,11 @@ export const mallToParkingEntities: Record<string, Parking[]> = {
       entity: "bay",
       location: "Floor 2",
       spotsAvailable: 1,
-      cards: ["bay-central-the1-luxe", "bay-central-the1-black"],
+      cards: [
+        "bay-central-the1-luxe",
+        "bay-central-the1-black",
+        "bay-central-the1-the-black",
+      ],
     },
   ],
   "central-festival-eastville": [
@@ -264,7 +330,11 @@ export const mallToParkingEntities: Record<string, Parking[]> = {
       entity: "bay",
       location: "Floor 2, Parking 2",
       spotsAvailable: 1,
-      cards: ["bay-central-the1-luxe", "bay-central-the1-black"],
+      cards: [
+        "bay-central-the1-luxe",
+        "bay-central-the1-black",
+        "bay-central-the1-the-black",
+      ],
     },
   ],
   "mega-bangna": [
@@ -278,7 +348,11 @@ export const mallToParkingEntities: Record<string, Parking[]> = {
       entity: "bay",
       location: "Floor G",
       spotsAvailable: 1,
-      cards: ["bay-central-the1-luxe", "bay-central-the1-black"],
+      cards: [
+        "bay-central-the1-luxe",
+        "bay-central-the1-black",
+        "bay-central-the1-the-black",
+      ],
     },
   ],
   "impact-muang-thong-thani": [
@@ -300,13 +374,17 @@ export const mallToParkingEntities: Record<string, Parking[]> = {
       entity: "ktb",
       location: "Floor 1",
       spotsAvailable: 1,
-      cards: ["ktb-precious-plus"],
+      cards: ["ktb-precious-plus", "ktb-iconic"],
     },
     {
       entity: "bay",
       location: "Floor 1",
       spotsAvailable: 1,
-      cards: ["bay-central-the1-luxe", "bay-central-the1-black"],
+      cards: [
+        "bay-central-the1-luxe",
+        "bay-central-the1-black",
+        "bay-central-the1-the-black",
+      ],
     },
   ],
   "central-plaza-bangna": [
@@ -320,7 +398,11 @@ export const mallToParkingEntities: Record<string, Parking[]> = {
       entity: "bay",
       location: "Floor 2",
       spotsAvailable: 1,
-      cards: ["bay-central-the1-luxe", "bay-central-the1-black"],
+      cards: [
+        "bay-central-the1-luxe",
+        "bay-central-the1-black",
+        "bay-central-the1-the-black",
+      ],
     },
   ],
   "central-plaza-salaya": [
@@ -334,7 +416,11 @@ export const mallToParkingEntities: Record<string, Parking[]> = {
       entity: "bay",
       location: "Floor G",
       spotsAvailable: 1,
-      cards: ["bay-central-the1-luxe", "bay-central-the1-black"],
+      cards: [
+        "bay-central-the1-luxe",
+        "bay-central-the1-black",
+        "bay-central-the1-the-black",
+      ],
     },
   ],
   "samyan-mitrtown": [
@@ -374,13 +460,22 @@ export const mallToParkingEntities: Record<string, Parking[]> = {
       entity: "ktb",
       location: "Floor 1",
       spotsAvailable: 1,
-      cards: ["ktb-precious-plus"],
+      cards: ["ktb-precious-plus", "ktb-iconic"],
     },
     {
       entity: "kbank",
       location: "Floor M",
       spotsAvailable: 1,
       cards: ["kbank-one-siam-signature", "kbank-one-siam-infinite"],
+    },
+    {
+      entity: "bay",
+      location: "Floor 1",
+      spotsAvailable: 1,
+      cards: [
+        "bay-siam-takashiyama-finest",
+        "bay-siam-takashiyama-finest-invitation",
+      ],
     },
   ],
   "siam-center": [
@@ -402,7 +497,11 @@ export const mallToParkingEntities: Record<string, Parking[]> = {
       entity: "bay",
       location: "Floor 1, Moon Parking",
       spotsAvailable: 1,
-      cards: ["bay-central-the1-luxe", "bay-central-the1-black"],
+      cards: [
+        "bay-central-the1-luxe",
+        "bay-central-the1-black",
+        "bay-central-the1-the-black",
+      ],
     },
   ],
   "central-ramintra": [
@@ -410,7 +509,11 @@ export const mallToParkingEntities: Record<string, Parking[]> = {
       entity: "bay",
       location: "Floor 2",
       spotsAvailable: 1,
-      cards: ["bay-central-the1-luxe", "bay-central-the1-black"],
+      cards: [
+        "bay-central-the1-luxe",
+        "bay-central-the1-black",
+        "bay-central-the1-the-black",
+      ],
     },
   ],
   "central-changwattana": [
@@ -418,7 +521,11 @@ export const mallToParkingEntities: Record<string, Parking[]> = {
       entity: "bay",
       location: "Floor 2, Parking 2",
       spotsAvailable: 1,
-      cards: ["bay-central-the1-luxe", "bay-central-the1-black"],
+      cards: [
+        "bay-central-the1-luxe",
+        "bay-central-the1-black",
+        "bay-central-the1-the-black",
+      ],
     },
   ],
   "futurepark-rangsit": [
@@ -426,7 +533,11 @@ export const mallToParkingEntities: Record<string, Parking[]> = {
       entity: "bay",
       location: "Floor G",
       spotsAvailable: 1,
-      cards: ["bay-central-the1-luxe", "bay-central-the1-black"],
+      cards: [
+        "bay-central-the1-luxe",
+        "bay-central-the1-black",
+        "bay-central-the1-the-black",
+      ],
     },
   ],
   "silom-complex": [
@@ -434,7 +545,11 @@ export const mallToParkingEntities: Record<string, Parking[]> = {
       entity: "bay",
       location: "Floor 6",
       spotsAvailable: 1,
-      cards: ["bay-central-the1-luxe", "bay-central-the1-black"],
+      cards: [
+        "bay-central-the1-luxe",
+        "bay-central-the1-black",
+        "bay-central-the1-the-black",
+      ],
     },
   ],
   "central-plaza-rama-3": [
@@ -442,7 +557,11 @@ export const mallToParkingEntities: Record<string, Parking[]> = {
       entity: "bay",
       location: "Floor B1",
       spotsAvailable: 1,
-      cards: ["bay-central-the1-luxe", "bay-central-the1-black"],
+      cards: [
+        "bay-central-the1-luxe",
+        "bay-central-the1-black",
+        "bay-central-the1-the-black",
+      ],
     },
   ],
   "central-chitlom": [
@@ -450,10 +569,14 @@ export const mallToParkingEntities: Record<string, Parking[]> = {
       entity: "bay",
       location: "Floor B/3, CL Tower",
       spotsAvailable: 1,
-      cards: ["bay-central-the1-luxe", "bay-central-the1-black"],
+      cards: [
+        "bay-central-the1-luxe",
+        "bay-central-the1-black",
+        "bay-central-the1-the-black",
+      ],
     },
   ],
-  "the-mall-ngamwong": [
+  "the-mall-ngamwongwan": [
     {
       entity: "uob",
       location: "-",
