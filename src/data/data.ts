@@ -478,3 +478,21 @@ export const mallToParkingEntities: Record<string, Parking[]> = {
     },
   ],
 }
+
+function getCardToMalls(
+  mallToParkingEntities: Record<string, Parking[]>
+): Record<string, string[]> {
+  return Object.entries(mallToParkingEntities).reduce(
+    (cardToMalls, [mall, parkingEntities]) => {
+      parkingEntities.forEach(({ cards }) => {
+        cards.forEach((card) => {
+          cardToMalls[card] = [...(cardToMalls[card] || []), mall]
+        })
+      })
+      return cardToMalls
+    },
+    {} as Record<string, string[]>
+  )
+}
+
+export const cardToMalls = getCardToMalls(mallToParkingEntities)

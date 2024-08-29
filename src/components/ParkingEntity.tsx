@@ -55,7 +55,7 @@ export default function ParkingEntity({ parking }: ParkingEntityProps) {
                 Eligible Credit Cards
               </span>
             </div>
-            <div className='grid gap-6 md:grid-cols-3 lg:grid-cols-4 pl-2'>
+            <div className='grid gap-6 pl-2'>
               {cards.map((cardId) => {
                 const card = creditCards.find((card) => card.id === cardId)
                 return (
