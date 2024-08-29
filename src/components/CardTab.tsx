@@ -32,7 +32,7 @@ export default function CardTab({ initialCard }: { initialCard: CreditCard }) {
 
       <div className='grid grid-cols-1 gap-4 mb-8'>
         {mallsForCard.map((mall) => (
-          <MallEntity key={mall} mallId={mall} />
+          <MallEntity key={mall.id} mall={mall} />
         ))}
       </div>
     </>

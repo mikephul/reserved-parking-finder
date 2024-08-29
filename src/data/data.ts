@@ -602,19 +602,34 @@ export const mallToParkingEntities: Record<string, Parking[]> = {
   ],
 }
 
+/**
+ * Converts a mapping of mall IDs to parking entities into a mapping of card id to mall information.
+ *
+ * @param mallToParkingEntities - A record where the keys are mall IDs and the values are arrays of parking entities.
+ * @returns A record where the keys are card numbers and the values are arrays of mall information objects.
+ *
+ * Each mall information object contains:
+ * - id: The ID of the mall.
+ * - name: The name of the mall.
+ * - location: The location of the parking entity within the mall.
+ */
 function getCardToMalls(
   mallToParkingEntities: Record<string, Parking[]>
-): Record<string, string[]> {
+): Record<string, { id: string; name: string; location: string }[]> {
   return Object.entries(mallToParkingEntities).reduce(
-    (cardToMalls, [mall, parkingEntities]) => {
-      parkingEntities.forEach(({ cards }) => {
+    (cardToMalls, [mallId, parkingEntities]) => {
+      const mallName = malls.find((mall) => mall.id === mallId)?.name || ""
+      parkingEntities.forEach(({ cards, location }) => {
         cards.forEach((card) => {
-          cardToMalls[card] = [...(cardToMalls[card] || []), mall]
+          cardToMalls[card] = [
+            ...(cardToMalls[card] || []),
+            { id: mallId, name: mallName, location },
+          ]
         })
       })
       return cardToMalls
     },
-    {} as Record<string, string[]>
+    {} as Record<string, { id: string; name: string; location: string }[]>
   )
 }
 
