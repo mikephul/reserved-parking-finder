@@ -23,7 +23,7 @@ export default function App() {
             </TabsTrigger>
             <TabsTrigger value='card'>
               <CreditCard className='h-4 w-4 mr-2' />
-              Search by Credit Card
+              Search by Card
             </TabsTrigger>
           </TabsList>
           <TabsContent value='mall'>
