@@ -335,7 +335,7 @@ export const mallToParkingEntities: Record<string, Parking[]> = {
   "central-plaza-westgate": [
     {
       entity: "scb",
-      location: "-",
+      location: "Floor G",
       spotsAvailable: 1,
       cards: ["scb-first", "scb-private-banking"],
     },
@@ -638,7 +638,7 @@ export const mallToParkingEntities: Record<string, Parking[]> = {
   "the-mall-bangkapi": [
     {
       entity: "uob",
-      location: "-",
+      location: "Floor G",
       spotsAvailable: 1,
       cards: ["uob-premier"],
     },
