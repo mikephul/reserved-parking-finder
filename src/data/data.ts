@@ -229,7 +229,7 @@ export const mallToParkingEntities: Record<string, Parking[]> = {
     },
     {
       entity: "kbank",
-      location: "Floor M (Zone North)",
+      location: "Floor B1 (Zone North)",
       spotsAvailable: 1,
       cards: ["kbank-one-siam-signature", "kbank-one-siam-infinite"],
     },
@@ -376,12 +376,6 @@ export const mallToParkingEntities: Record<string, Parking[]> = {
   ],
   "mega-bangna": [
     {
-      entity: "scb",
-      location: "-",
-      spotsAvailable: 1,
-      cards: ["scb-first", "scb-private-banking"],
-    },
-    {
       entity: "bay",
       location: "Floor G",
       spotsAvailable: 1,
@@ -390,6 +384,18 @@ export const mallToParkingEntities: Record<string, Parking[]> = {
         "bay-central-the1-black",
         "bay-central-the1-the-black",
       ],
+    },
+    {
+      entity: "uob",
+      location: "Floor G",
+      spotsAvailable: 1,
+      cards: ["uob-infinite", "uob-privimiles", "uob-premier", "uob-zenith"],
+    },
+    {
+      entity: "scb",
+      location: "Floor G",
+      spotsAvailable: 1,
+      cards: ["scb-first", "scb-private-banking"],
     },
   ],
   "impact-muang-thong-thani": [
